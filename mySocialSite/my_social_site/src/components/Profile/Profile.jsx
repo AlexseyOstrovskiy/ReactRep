@@ -4,7 +4,7 @@ import  s from './Profile.module.css';
 
 
 const Profile = () => {
-  return <div className={s.content}>
+  return <div >
     <div>
       <img src='https://bipbap.ru/wp-content/uploads/2017/04/priroda_kartinki_foto_03.jpg'></img>
     </div>
