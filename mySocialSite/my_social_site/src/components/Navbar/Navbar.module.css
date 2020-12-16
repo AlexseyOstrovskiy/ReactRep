@@ -1,11 +1,13 @@
 .nav{
     grid-area: n;
     background-color: grey;
+    padding: 20px;
   }
-  .item{
+  .item a{
     color: khaki;
+    text-decoration:none;
   }
 
-  .active{
-    color: rgb(13, 245, 245);
+  .item a.active{
+    color:gold;
   }
