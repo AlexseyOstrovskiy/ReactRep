@@ -1,6 +1,8 @@
 .img{
     height: 200px;
     width: 1000px;
+    margin: 15px;
+    border-radius: 20px 10px 5px 5px;
 }
 
 .descriptionBloc{

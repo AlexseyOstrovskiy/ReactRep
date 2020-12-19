@@ -2,6 +2,8 @@
     grid-area: n;
     background-color: grey;
     padding: 20px;
+    border-radius: 15px;
+    margin: 5px;
   }
   .item a{
     color: khaki;
