@@ -25,8 +25,11 @@ function App(props) {
           <Route path='/setting' component={Setting} /> */}
 
 
-          <Route path='/profile' component={Profile} />
-          <Route path='/dialogs' render={()=> <Dialogs dialogs = {props.dialogs}/>} />
+          {/* <Route path='/profile' component={Profile} /> */}
+          <Route path='/profile' render={()=> <Profile posts = {props.posts}/>} />
+          <Route path='/dialogs' render={()=> <Dialogs dialogs = {props.dialogs} messages = {props.messages}/>} />
+          
+
         </div>
       </div>
     </BrowserRouter>
