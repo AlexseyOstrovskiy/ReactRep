@@ -27,3 +27,12 @@
     padding: 10px;
 
 }
+
+.item a{
+    color: rgb(233, 0, 233);
+    
+  }
+
+  .item a.active{
+    color:rgb(19, 82, 7);
+  }

@@ -5,14 +5,21 @@ import s from './MyPosts.module.css';
 const MyPosts = (props) => {
   let postElements = props.posts.map((p) => <Post message={p.post} like={p.like} />);
 
+  let newPostElement=React.createRef(); 
+
+  let addPost = () =>{
+    let text=newPostElement.current.value;
+    alert(text)
+  }
+
   return <div className={s.postsBlock} >
     <h3> My post</h3>
     <div>
       <div>
-        <textarea></textarea>
+        <textarea ref={newPostElement}></textarea>
       </div>
       <div>
-        <button>add Post</button>
+        <button onClick={addPost}>add Post</button>
       </div>
     </div>
 
