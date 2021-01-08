@@ -15,8 +15,14 @@ const Dialogs = (props) => {
     
     let addMessage=()=>{
         let textAddMesssage = addMessageRef.current.value;
-        alert(textAddMesssage);
+        props.addNewMessage(textAddMesssage);
+        
     }
+
+    // let onMessageChange =() =>{
+    //     let newMessage = addMessageRef.current.value;
+    //     props.addNewMessage(newMessage);
+    // }
 
     return (
         <div className={s.dialogs}>
@@ -29,11 +35,12 @@ const Dialogs = (props) => {
             </div>
 
             <p>
-                <textarea ref={addMessageRef}></textarea>
+                <textarea ref={addMessageRef} ></textarea>
                 <button onClick={addMessage}>Add message</button>
             </p>
             
         </div>
+        
     )
 }
 

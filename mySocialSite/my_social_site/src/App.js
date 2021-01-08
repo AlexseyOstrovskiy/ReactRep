@@ -33,7 +33,10 @@ function App(props) {
               updateNewPostText={props.updateNewPostText}
             />} />
           <Route path='/dialogs' render=
-            {() => <Dialogs state={props.state.messagesPage} />} />
+            {() => <Dialogs 
+            state={props.state.messagesPage} 
+            addNewMessage = {props.addNewMessage}
+            />} />
 
 
         </div>
