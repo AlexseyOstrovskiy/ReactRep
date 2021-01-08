@@ -27,10 +27,13 @@ function App(props) {
 
           {/* <Route path='/profile' component={Profile} /> */}
           <Route path='/profile' render=
-          {()=> <Profile state = {props.state.profilePage}/>} />
+            {() => <Profile
+              state={props.state.profilePage}
+              addPost={props.addPost}
+            />} />
           <Route path='/dialogs' render=
-          {()=> <Dialogs state = {props.state.messagesPage}/>} />
-          
+            {() => <Dialogs state={props.state.messagesPage} />} />
+
 
         </div>
       </div>
