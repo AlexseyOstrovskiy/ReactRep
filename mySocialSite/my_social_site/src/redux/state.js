@@ -5,7 +5,8 @@ import {rerenderEntireTree} from '../render';
         posts:[
             { id: 1, post: 'Hi, how are you?' , like: 10},
             { id: 2, post: 'It\'is my first post!!!', like: 15}
-        ]
+        ], 
+        newPostText: 'it-Kamasutra'
     },
 
     messagesPage:{
@@ -27,13 +28,20 @@ import {rerenderEntireTree} from '../render';
 
   }
 
-  export let addPost = (postMessage) =>{
+  export let addPost = () =>{
     let newPost = {
       id: 5,
-      post: postMessage,
+      post: state.profilePage.newPostText,
       like: 0  
     };
-    state.profilePage.posts.push(newPost);
+    state.profilePage.posts.push(newPost); 
+    state.profilePage.newPostText=" ";
+    rerenderEntireTree(state);
+  } 
+
+
+  export let updateNewPostText = (newText) =>{
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
   } 
 
