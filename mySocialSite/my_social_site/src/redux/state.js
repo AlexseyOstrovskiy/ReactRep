@@ -23,7 +23,8 @@ let state = {
       { id: 3, message: 'Yo' },
       { id: 4, message: 'Brooo!' },
       { id: 5, message: 'Good idea!' },
-    ]
+    ],
+    newTextMessage: 'new text message'
   }
 
 }
@@ -42,18 +43,24 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
+
   rerenderEntireTree(state);
 }
 
-export let addNewMessage = (newMessage) => {
+export let addNewMessage = () => {
   let newMessageState = {
     id: state.messagesPage.messages.length + 1,
-    message: newMessage
+    message: state.messagesPage.newTextMessage
   };
   state.messagesPage.messages.push(newMessageState);
+  // state.messagesPage.newTextMessage = " ",
   rerenderEntireTree(state);
+}
 
+export let updateNewMessageText = (newMessage) => {
+state.messagesPage.newTextMessage = newMessage;
 
+rerenderEntireTree(state);
 }
 
 

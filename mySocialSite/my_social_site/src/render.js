@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {addPost,updateNewPostText, addNewMessage} from './redux/state';
+import {addPost,updateNewPostText, addNewMessage,  updateNewMessageText} from './redux/state';
 
 export let rerenderEntireTree = (state) =>{
 ReactDOM.render(
@@ -13,6 +13,7 @@ ReactDOM.render(
     addPost={addPost} 
     updateNewPostText = {updateNewPostText}
     addNewMessage = {addNewMessage}
+    updateNewMessageText ={ updateNewMessageText}
     />
   </React.StrictMode>,
   document.getElementById('root')
