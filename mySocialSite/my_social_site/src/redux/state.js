@@ -24,10 +24,11 @@ let state = {
       { id: 4, message: 'Brooo!' },
       { id: 5, message: 'Good idea!' },
     ],
-    newTextMessage: 'new text message'
+    newTextMessage: 'new text message !!!!!!!!!!'
   }
-
 }
+
+window.state = state;
 
 export let addPost = () => {
   let newPost = {
@@ -53,13 +54,12 @@ export let addNewMessage = () => {
     message: state.messagesPage.newTextMessage
   };
   state.messagesPage.messages.push(newMessageState);
-  // state.messagesPage.newTextMessage = " ",
+  state.messagesPage.newTextMessage = " ";
   rerenderEntireTree(state);
 }
 
 export let updateNewMessageText = (newMessage) => {
 state.messagesPage.newTextMessage = newMessage;
-
 rerenderEntireTree(state);
 }
 

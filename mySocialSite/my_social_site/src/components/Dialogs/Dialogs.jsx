@@ -14,14 +14,13 @@ const Dialogs = (props) => {
 
     
     let addNewMessage=()=>{
-        // let textAddMesssage = addMessageRef.current.value;
         props.addNewMessage();
-        
     }
 
     let onMessageChange =() =>{
         let newMessage = addMessageRef.current.value;
         props.updateNewMessageText(newMessage);
+       
     }
 
     return (
@@ -35,13 +34,13 @@ const Dialogs = (props) => {
             </div>
 
             <p>
-                <textarea ref={addMessageRef} onChange={onMessageChange}></textarea>
+                <textarea ref={addMessageRef} onChange={onMessageChange} value={props.state.newTextMessage}></textarea>
                 <button onClick={addNewMessage}>Add message</button>
             </p>
             
         </div>
         
     )
-}
+}   
 
 export default Dialogs;
