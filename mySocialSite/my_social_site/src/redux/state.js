@@ -4,7 +4,7 @@ let store = {
       posts: [
         { id: 1, post: 'Hi, how are you?', like: 10 },
         { id: 2, post: 'It\'is my first post!!!', like: 15 }
-      ],
+      ],  
       newPostText: 'it-Kamasutra'
     },
   
@@ -35,33 +35,63 @@ let store = {
   subscribe(observer) {
     this._callSubscriber = observer;
     },
-  addPost(){
-      let newPost = {
-        id: 5,
-        post: this._state.profilePage.newPostText,
-        like: 0
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = " ";
-      this._callSubscriber(this._state);
-    },
-  updateNewPostText(newText){
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-    },
- addNewMessage () {
-      let newMessageState = {
-        id: this._state.messagesPage.messages.length + 1,
-        message: this._state.messagesPage.newTextMessage
-      };
-      this._state.messagesPage.messages.push(newMessageState);
-      this._state.messagesPage.newTextMessage = " ";
-      this._callSubscriber(this._state);
-    },
-updateNewMessageText(newMessage){
-  this._state.messagesPage.newTextMessage = newMessage;
-  this._callSubscriber(this._state);
-    }    
+  // addPost(){
+  //     let newPost = {
+  //       id: 5,
+  //       post: this._state.profilePage.newPostText,
+  //       like: 0
+  //     };
+  //     this._state.profilePage.posts.push(newPost);
+  //     this._state.profilePage.newPostText = " ";
+  //     this._callSubscriber(this._state);
+  //   },
+  // updateNewPostText(newText){
+  //   this._state.profilePage.newPostText = newText;
+  //   this._callSubscriber(this._state);
+  //   },
+//  addNewMessage () {
+//       let newMessageState = {
+//         id: this._state.messagesPage.messages.length + 1,
+//         message: this._state.messagesPage.newTextMessage
+//       };
+//       this._state.messagesPage.messages.push(newMessageState);
+//       this._state.messagesPage.newTextMessage = " ";
+//       this._callSubscriber(this._state);
+//     },
+// updateNewMessageText(newMessage){
+//   this._state.messagesPage.newTextMessage = newMessage;
+//   this._callSubscriber(this._state);
+//     }, 
+    
+    dispatch(action){
+      if (action.type === 'ADD-POST'){
+        let newPost = {
+          id: 5,
+          post: this._state.profilePage.newPostText,
+          like: 0
+        };
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostText = " ";
+        this._callSubscriber(this._state);
+      }
+      else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+        this._state.profilePage.newPostText = action.newText;
+        this._callSubscriber(this._state);
+      }
+      else if(action.type === 'ADD-NEW-MESSAGE'){
+        let newMessageState = {
+          id: this._state.messagesPage.messages.length + 1,
+          message: this._state.messagesPage.newTextMessage
+        };
+        this._state.messagesPage.messages.push(newMessageState);
+        this._state.messagesPage.newTextMessage = " ";
+        this._callSubscriber(this._state);
+      }
+      else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
+        this._state.messagesPage.newTextMessage = action.newMessage;
+        this._callSubscriber(this._state);
+      }
+    }
 }
 
 window.store = store;
