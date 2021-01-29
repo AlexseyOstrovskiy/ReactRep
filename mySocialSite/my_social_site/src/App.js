@@ -3,7 +3,7 @@ import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsComtainer from './components/Dialogs/DialogsComtainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
@@ -28,14 +28,12 @@ function App(props) {
           {/* <Route path='/profile' component={Profile} /> */}
           <Route path='/profile' render=
             {() => <Profile
-              profilePage={props.state.profilePage}
-              dispatch={props.dispatch}
+             store={props.store}
             />} />
           <Route path='/dialogs' render=
-            {() => <Dialogs
-              state={props.state.messagesPage}
-              dispatch={props.dispatch}
-            />} />
+            {() => <DialogsComtainer
+              store={props.store}
+              />} />
         </div>
       </div>
     </BrowserRouter>
