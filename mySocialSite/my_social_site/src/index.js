@@ -3,19 +3,20 @@ import './index.css';
 import store from './redux/redux-store';
 import ReactDOM from 'react-dom';
 import App from './App';
+import  { Provider } from './StoreContext';
 
 
 let rerenderEntireTree = (state) =>{
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App 
-    store={store}
-    state={state} 
-    dispatch={store.dispatch.bind(store)} 
-    // updateNewPostText = {store.updateNewPostText.bind(store)}
-    // addNewMessage = {store.addNewMessage.bind(store)}
-    // updateNewMessageText ={ store.updateNewMessageText.bind(store)}
+    // store={store}
+    // state={state} 
+    // dispatch={store.dispatch.bind(store)} 
+   
     />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

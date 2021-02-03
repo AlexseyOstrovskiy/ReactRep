@@ -17,23 +17,10 @@ function App(props) {
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-
-          {/* <Route path='/dialogs' component={Dialogs} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/news' component={News} />
-          <Route path='/music' component={Music} />
-          <Route path='/setting' component={Setting} /> */}
-
-
-          {/* <Route path='/profile' component={Profile} /> */}
           <Route path='/profile' render=
-            {() => <Profile
-             store={props.store}
-            />} />
+            {() => <Profile/>} />
           <Route path='/dialogs' render=
-            {() => <DialogsComtainer
-              store={props.store}
-              />} />
+            {() => <DialogsComtainer/>} />
         </div>
       </div>
     </BrowserRouter>
