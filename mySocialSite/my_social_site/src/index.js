@@ -4,8 +4,6 @@ import store from './redux/redux-store';
 import ReactDOM from 'react-dom';
 import App from './App';
 import  { Provider } from './StoreContext';
-
-
 let rerenderEntireTree = (state) =>{
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +12,6 @@ ReactDOM.render(
     // store={store}
     // state={state} 
     // dispatch={store.dispatch.bind(store)} 
-   
     />
     </Provider>
   </React.StrictMode>,
