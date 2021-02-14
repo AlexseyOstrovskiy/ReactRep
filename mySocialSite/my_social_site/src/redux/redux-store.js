@@ -8,5 +8,5 @@ let reducers = combineReducers({
     messagesPage:messageReducer
 })
 let store = createStore(reducers);
-
+window.store = store;
 export default store;
