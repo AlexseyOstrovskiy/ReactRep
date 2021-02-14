@@ -26,17 +26,26 @@ const messageReducer = (state = initialState, action) => {
                 id: state.messages.length + 1,
                 message: state.newTextMessage
             };
-            let stateCopy = {...state};
-            stateCopy.messages = [...state.messages];
-            stateCopy.messages.push(newMessageState);
-            stateCopy.newTextMessage = [...state.newTextMessage];
-            stateCopy.newTextMessage = " ";
-            return stateCopy;
+            // let stateCopy = {...state};
+            // stateCopy.messages = [...state.messages];
+            // stateCopy.messages.push(newMessageState);
+            // stateCopy.newTextMessage = [...state.newTextMessage];
+            // stateCopy.newTextMessage = " ";
+            // return stateCopy;
+            return{
+              ...state, 
+              messages:[...state.messages, newMessageState],
+              newTextMessage: ' '
+            }
           }
         case UPDATE_NEW_MESSAGE_TEXT:{
-          let stateCopy = {...state}; 
-          stateCopy.newTextMessage = action.newMessage;
-            return stateCopy;
+          // let stateCopy = {...state}; 
+          // // stateCopy.newTextMessage = action.newMessage;
+          //   return stateCopy;
+          return{
+            ...state,
+            newTextMessage: action.newMessage
+          }
           }
         default:
             return state;
