@@ -9,7 +9,6 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Users from './components/Users/Users';
 
 function App(props) {
   //  let dialogs = props.dialogs;

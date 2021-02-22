@@ -3,9 +3,12 @@ const UNFOLLOW = 'UNFOLLOW';
 const  SET_USERS = 'SET_USERS';
 let initialState = {
    users: [
-      // { id: 1, followed:false, fullName: 'Alex', status: 'i am a boss', location :{city:'Mogilev', country:'Belarus'} },
-      // { id: 2, followed:true, fullName: 'Billy', status: 'i am a not boss', location :{city:'Moscow', country:'Russia'} },
-      // { id: 3,followed:false, fullName: 'Willy', status: 'i am drink beer now', location :{city:'Kiev', country:'Ukraine'} },
+      { id: 1, fotoUrl:'https://yt3.ggpht.com/a/AATXAJwFh4ooyh5RaBCdE-ozqqgbR2jb0V_Sk4nNaw=s900-c-k-c0xffffffff-no-rj-mo',
+       followed:false, fullName: 'Alex', status: 'i am a boss', location :{city:'Mogilev', country:'Belarus'} },
+      { id: 2, fotoUrl:'http://pl.pollipartner.com/wp-content/uploads/2017/11/mezczyzni-850x750.jpg',
+       followed:true, fullName: 'Billy', status: 'i am a not boss', location :{city:'Moscow', country:'Russia'} },
+      { id: 3, fotoUrl:'http://pl.pollipartner.com/wp-content/uploads/2017/11/mezczyzni-850x750.jpg',
+      followed:false, fullName: 'Willy', status: 'i am drink beer now', location :{city:'Kiev', country:'Ukraine'} },
     ],  
     newPostText: 'it-Kamasutra'
   };
