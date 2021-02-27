@@ -1,6 +1,8 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const  SET_USERS = 'SET_USERS';
+const  SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const  SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 let initialState = {
    users: [
       // { id: 1, fotoUrl:'https://yt3.ggpht.com/a/AATXAJwFh4ooyh5RaBCdE-ozqqgbR2jb0V_Sk4nNaw=s900-c-k-c0xffffffff-no-rj-mo',
@@ -10,7 +12,10 @@ let initialState = {
       // { id: 3, fotoUrl:'http://pl.pollipartner.com/wp-content/uploads/2017/11/mezczyzni-850x750.jpg',
       // followed:false, fullName: 'Willy', status: 'i am drink beer now', location :{city:'Kiev', country:'Ukraine'} },
     ],  
-    newPostText: 'it-Kamasutra'
+    pageSize:5,
+    totalUsersCount:0,
+    currentPage:1
+
   };
 
 const usersReducer =(state = initialState, action) =>{
@@ -36,7 +41,14 @@ const usersReducer =(state = initialState, action) =>{
           })
         }
         case SET_USERS:{
-          return{...state, users:[...state.users, ...action.users]}
+          return{...state, users:action.users}
+        }
+
+        case SET_CURRENT_PAGE:{
+          return{...state,currentPage:action.currentPage}
+        }
+        case SET_TOTAL_USERS_COUNT:{
+          return{...state,totalUsersCount:action.count}
         }
         default:
             return state;
@@ -47,4 +59,6 @@ const usersReducer =(state = initialState, action) =>{
 export const followAC =(userId)=>({type:FOLLOW, userId})
 export const unfollowAC =(userId)=>({type:UNFOLLOW, userId})
 export const setUsersAC =(users)=>({type:SET_USERS, users})
+export const setCurrerntPageAC =(currentPage)=>({type:SET_CURRENT_PAGE, currentPage})
+export const setTotalUserCountAC =(totalUsersCount)=>({type:SET_TOTAL_USERS_COUNT,count:totalUsersCount})
 export default usersReducer;
