@@ -9,6 +9,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import { BrowserRouter, Route } from 'react-router-dom';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 function App(props) {
   //  let dialogs = props.dialogs;
@@ -19,7 +20,7 @@ function App(props) {
         <Navbar />
         <div className='app-wrapper-content'>
           <Route path='/profile' render=
-            {() => <Profile/>} />
+            {() => <ProfileContainer/>} />
           <Route path='/dialogs' render=
             {() => <DialogsComtainer/>} />
           <Route path='/users' render=
