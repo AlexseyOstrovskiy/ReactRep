@@ -8,3 +8,13 @@
 .descriptionBloc{
     padding: 10px;
 }
+
+.fullNAmeStyle{
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+}
+.aboutMe{
+    font-size: 15px;
+    font-style: italic;
+}

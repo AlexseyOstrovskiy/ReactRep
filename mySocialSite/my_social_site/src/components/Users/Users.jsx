@@ -4,28 +4,39 @@ import userPhotoImg from '../../assets/img/user.jpg';
 import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
-    let pagesCount=Math.ceil(props.totalUserCount/props.pageSize);
-    let pages =[];
-    for(let i=1; i<= pagesCount; i++){
+    let pagesCount = Math.ceil(props.totalUserCount / props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-   return <div>
-        <div>
+    return <div>
+        <div className={s.stylePagination}>
             {pages.map(p => {
                 return <span className={props.currentPage === p && s.selectedPage}
                     onClick={(e) => { props.onPageChanged(p) }}
                 >{p}</span>
             })}
-
         </div>
+
+{/*         
+      <div className={s.pagination} >
+  <a href="#">&laquo;</a>
+  <a href={}>1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div> */}
         {
             props.users.map(
                 u =>
                     <div key={u.id}>
                         <span>
                             <div>
-                                <NavLink to={'/profile/'+u.id}>
-                                <img src={u.photos.small != null ? u.photo.small : userPhotoImg} className={s.userPhoto} />
+                                <NavLink to={'/profile/' + u.id}>
+                                    <img src={u.photos.small != null ? u.photo.small : userPhotoImg} className={s.userPhoto} />
                                 </NavLink>
                             </div>
                             <div>
