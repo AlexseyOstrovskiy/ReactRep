@@ -12,24 +12,24 @@ let Users = (props) => {
     let a = pages[0];
     let b = pages[1];
     let c = pages[2];
-    let d = pages[3]
+    let d = pages[3];
     let e = pages[4];
     let f = pages[5];
-    let nextSixPages = () => {
 
-        a = a + 6;
-        b = b + 6;
-        c = c + 6;
-        d = d + 6;
-        e = e + 6;
-        f = f + 6;
-        console.log(a);
-        console.log(b);
-        console.log(c);
-        pagesSix(a,b,c,d,e,f);
-    }
+
+    // var a=pages[0],
+    // var b=pages[1],
+    // var c=pages[2],
+    // var d=pages[3],
+    // var e=pages[4],
+    // var f=pages[5]
+
+  
 
     let pagesSix = (a,b,c,d,e,f) => {
+        console.log( "pageSix" + a);
+        console.log("pageSix" + b);
+        console.log("pageSix" + c);
         return <div>
             <a href="#" className={props.currentPage === a && s.selectedPage} onClick={(e) => { props.onPageChanged(a) }}>{a}</a>
             <a href="#" className={props.currentPage === b && s.selectedPage} onClick={(e) => { props.onPageChanged(b) }}>{b}</a>
@@ -38,6 +38,21 @@ let Users = (props) => {
             <a href="#" className={props.currentPage === e && s.selectedPage} onClick={(e) => { props.onPageChanged(e) }}>{e}</a>
             <a href="#" className={props.currentPage === f && s.selectedPage} onClick={(e) => { props.onPageChanged(f) }}>{f}</a>
         </div>
+    }
+
+    let nextSixPages = () => {
+
+        a = a + 6;
+        b = b + 6;
+        c = c + 6;
+        d = d + 6;
+        e = e + 6;
+        f = f + 6;
+        console.log("nextSixPages" + a);
+        console.log("nextSixPages" + b);
+        console.log("nextSixPages" + c);
+       
+        pagesSix(a,b,c,d,e,f);
     }
     return <div>
         {/* <div className={s.stylePagination}>
@@ -51,7 +66,9 @@ let Users = (props) => {
 
         <div className={s.pagination} >
             <a href="#" >&laquo;</a>
-            <div>{pagesSix(a,b,c,d,e,f)}</div>
+            <div>{
+           
+            pagesSix(a,b,c,d,e,f)}</div>
             <a href="#" onClick={(e) => { nextSixPages() }}>&raquo;</a>
         </div>
 
