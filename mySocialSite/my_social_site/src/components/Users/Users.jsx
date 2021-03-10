@@ -9,27 +9,18 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    let a = pages[0];
-    let b = pages[1];
-    let c = pages[2];
-    let d = pages[3];
-    let e = pages[4];
-    let f = pages[5];
-
-
-    // var a=pages[0],
-    // var b=pages[1],
-    // var c=pages[2],
-    // var d=pages[3],
-    // var e=pages[4],
-    // var f=pages[5]
-
-  
-
-    let pagesSix = (a,b,c,d,e,f) => {
-        console.log( "pageSix" + a);
-        console.log("pageSix" + b);
-        console.log("pageSix" + c);
+   
+    var a;
+    var b;
+    var c;
+    var d;
+    var e;
+    var f;
+    
+    let pagesSix = (a,b,c,d,e,f ) => {  
+      
+        console.log("pageSix" + a);
+      
         return <div>
             <a href="#" className={props.currentPage === a && s.selectedPage} onClick={(e) => { props.onPageChanged(a) }}>{a}</a>
             <a href="#" className={props.currentPage === b && s.selectedPage} onClick={(e) => { props.onPageChanged(b) }}>{b}</a>
@@ -40,20 +31,9 @@ let Users = (props) => {
         </div>
     }
 
-    let nextSixPages = () => {
+    
 
-        a = a + 6;
-        b = b + 6;
-        c = c + 6;
-        d = d + 6;
-        e = e + 6;
-        f = f + 6;
-        console.log("nextSixPages" + a);
-        console.log("nextSixPages" + b);
-        console.log("nextSixPages" + c);
-       
-        pagesSix(a,b,c,d,e,f);
-    }
+          
     return <div>
         {/* <div className={s.stylePagination}>
             {pages.map(p => {
@@ -67,9 +47,15 @@ let Users = (props) => {
         <div className={s.pagination} >
             <a href="#" >&laquo;</a>
             <div>{
-           
-            pagesSix(a,b,c,d,e,f)}</div>
-            <a href="#" onClick={(e) => { nextSixPages() }}>&raquo;</a>
+                // a=1, b=2, c=3, d=4, e=5, f=6,
+                //  pagesSix(a,b,c,d,e,f)
+                pagesSix(1,2,3,4,5,6)
+                }</div>
+                <a href="#" onClick={
+                    (e) => {            
+                        pagesSix(11,22,33,44,55,66)
+                      
+                        }}>&raquo;</a>
         </div>
 
 
