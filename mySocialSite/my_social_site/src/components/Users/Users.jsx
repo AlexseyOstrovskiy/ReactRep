@@ -43,7 +43,7 @@ let Users = (props) => {
             })}
         </div> */}
 
-
+       
         <div className={s.pagination} >
             <a href="#" >&laquo;</a>
             <div>{
@@ -51,10 +51,11 @@ let Users = (props) => {
                 //  pagesSix(a,b,c,d,e,f)
                 pagesSix(1,2,3,4,5,6)
                 }</div>
+                
                 <a href="#" onClick={
                     (e) => {            
-                        pagesSix(11,22,33,44,55,66)
-                      
+                        pagesSix(777,22,33,44,55,66)
+                      console.log(pagesSix);
                         }}>&raquo;</a>
         </div>
 

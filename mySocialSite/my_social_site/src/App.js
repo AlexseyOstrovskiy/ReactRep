@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import DialogsComtainer from './components/Dialogs/DialogsComtainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -16,7 +17,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
-        <Header />
+        <HeaderContainer/>
         <Navbar />
         <div className='app-wrapper-content'>
           <Route path='/profile/:userId?' render=
